@@ -1,0 +1,46 @@
+.hero {
+	background-color: black;
+}
+
+#home-title {
+	color: white; 
+	font-size: 180px;
+}
+
+#enterButton {
+	border: 1px solid white; 
+	background-color: black;
+	color: white; 
+	margin-top: 20px; 
+}
+
+#enterButton:hover {
+	background-color: white;
+	color: red;
+	font-weight: 700;
+}
+
+.Weather {
+	background-color: black;
+}
+
+
+html, body {
+	height: 100%;
+	width: 100%;
+	text-transform: uppercase;
+	background-color: black;
+}
+
+.subtitle {
+	color: white;
+	font-weight: 800;
+}
+
+p {
+	color: white;
+}
+
+#moonContainer {
+	margin: 20px; 
+}
