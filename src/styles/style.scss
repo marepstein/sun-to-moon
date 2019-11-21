@@ -4,14 +4,24 @@
 
 #home-title {
 	color: white; 
-	font-size: 180px;
+	font-size: 200px;
+	// transform:skew(60deg, -30deg) scaleY(.6);
 }
+
+// #home-title:hover {
+// 	transform: scale(0.3);
+// }
 
 #enterButton {
 	border: 1px solid white; 
 	background-color: black;
 	color: white; 
 	margin-top: 20px; 
+}
+
+form {
+	width: 200px; 
+	// margin-left: 800px;
 }
 
 #enterButton:hover {
@@ -43,4 +53,117 @@ p {
 
 #moonContainer {
 	margin: 20px; 
+}
+
+.moon {
+	// border: 1px solid red; 
+	height: 300px;
+	width: 350px; 
+	border-radius: 50%; 
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsn-lk-LWId80J1lHHPe889F3RQaLLEYkChVPDY8pJEWMyrSconw&s');
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.sun {
+
+	height: 300px;
+	width: 350px; 
+	border-radius: 50%; 
+	background-image: url('https://www.cool943.com/wp-content/uploads/2019/06/sun-fireball-solar-flare-sunlight-87611.jpeg');
+	background-position: center;
+	background-size: 300px 300px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#moonPage {
+	margin-top: 130px; 
+}
+
+
+
+
+/* 
+** Change this if you need to modify
+** the amount of lines displayed
+*/
+$total-lines: 6;
+
+
+/*
+** Leave these unless you want
+** to open a whole can of worms
+*/
+$left-offset: 10px;
+$clip-height: 50px;
+$line-height: $clip-height - 20px;
+
+
+/*
+** Apply styles to the parent element
+*/
+.Words {
+  margin: 0 auto;
+	padding: 80px 0;
+	position: absolute;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  // Sort out nasty text fuzz
+  transform: translate3d(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-kerning: normal;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+/*
+** Apply common styles to each line of text
+*/
+.Words-line {
+  height: $clip-height;
+  overflow: hidden;
+  position: relative;
+  
+  // Change the perspective of each alternating line
+  &:nth-child(odd) {
+    transform: skew(60deg, -30deg) scaleY(.66667);
+  }
+  &:nth-child(even) {
+    transform: skew(0deg, -30deg) scaleY(1.33333);
+  }
+  
+  // Loop over the total lines and apply a left offset
+  @for $i from 1 through $total-lines+1 {
+    &:nth-child(#{$i}) {
+      left: $left-offset * $i;
+    }
+  }
+}
+
+
+/*
+** Fine-grained text styles
+*/
+p {
+  height: $clip-height;
+  line-height: $line-height;
+  padding: 0 10px;
+  transition: all .4s ease-in-out;
+  transform: translate3d(0, 0, 0);
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+
+/*
+** The hover interaction
+*/
+.Words:hover {
+  p {
+    transform: translate3d(0, -($clip-height), 0);
+  }
 }

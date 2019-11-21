@@ -1,7 +1,10 @@
 import React from 'react'
 import axios from 'axios'
+import moment from 'moment' 
 
-let newDate = new Date()
+
+const newDate = moment().format('DDmmYYYY')
+
 
 class SunAndMoon extends React.Component {
 
@@ -42,19 +45,23 @@ class SunAndMoon extends React.Component {
 
 
   render() {
-		console.log(newDate)
+    console.log(newDate)
     console.log(this.state.data)
     console.log(this.state.moonData)
-    return <div className="Section">
+    return <div className="Section" id="moonPage">
       <div className="container" id="moonContainer">
         <div className="title">
-		  <p>Sunrise: {this.state.data.sunrise}</p>
+          <p>Sunrise: {this.state.data.sunrise}</p>
           <p>Sunset: {this.state.data.sunset}</p>
           <p>Day Length: {this.state.data.day_length}</p>
           <p>Moonrise: {this.state.data.moonrise}</p>
           <p>Moonset: {this.state.data.moonset}</p>
           <p>Moon Phase: {this.state.moonData.map(moon => moon.Phase)}</p>
           <p>Moon Type: {this.state.moonData.map(moon => moon.Moon)}</p>
+        </div>
+        <div className="moonAndSun columns">
+          <div className="moon"></div>
+          <div className="sun"></div>
         </div>
       </div>
     </div>
