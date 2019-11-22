@@ -38,7 +38,7 @@ class Weather extends React.Component {
 	
   render() {
     console.log(this.state.data)
-    return <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
+    return <Animated animationIn="fadeInLeft" animationOut="fadeOut" isVisible={true}>
       <div className="section">
         <div className="container">
           <div className="columns is-mobile is-multiline">
