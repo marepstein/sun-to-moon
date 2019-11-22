@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import moment from 'moment' 
+import { Link } from 'react-router-dom'
+import Navbar from './navbar'
 
 
 const newDate = moment().format('DDmmYYYY')
@@ -49,9 +51,9 @@ class SunAndMoon extends React.Component {
     console.log(this.state.data)
     console.log(this.state.moonData)
     return <div className="Section" id="moonPage">
-      <div className="container" id="moonContainer">
+      <div className="container columns" id="moonContainer">
         <div className="title">
-				<div className="title is-size-1-mobile" id="home-title">SUN & MOON</div>
+          <div className="title is-size-1-mobile" id="home-title">SUN & MOON</div>
           <p>Sunrise: {this.state.data.sunrise}</p>
           <p>Sunset: {this.state.data.sunset}</p>
           <p>Day Length: {this.state.data.day_length}</p>
@@ -60,11 +62,12 @@ class SunAndMoon extends React.Component {
           <p>Moon Phase: {this.state.moonData.map(moon => moon.Phase)}</p>
           <p>Moon Type: {this.state.moonData.map(moon => moon.Moon)}</p>
         </div>
-        <div className="moonAndSun columns">
+        <div className="moonAndSun row is-pulled-right">
           <div className="moon"></div>
           <div className="sun"></div>
         </div>
       </div>
+      <Link className="button" id="horoscopeButton" to={'/horoscope'}> Horoscope </Link>
     </div>
   }
 	

@@ -1,13 +1,11 @@
+
 import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 // import { CSSTransitionGroup } from 'react-transition-group'
-
-
 class Home extends React.Component {
-
   constructor() {
-    super() 
+    super()
     this.state = {
       data: {
         city: '',
@@ -16,13 +14,11 @@ class Home extends React.Component {
       error: ''
     }
   }
-	
   handleChange(e) {
     console.log(e.target.value)
     const data = { ...this.state.data, [e.target.name]: e.target.value }
     this.setState({ data, error: '' })
   }
-		
   render() {
     // console.log(location)
     return <section className="hero is-fullheight">
@@ -39,7 +35,7 @@ class Home extends React.Component {
                     placeholder="City"
                     name="city"
                     className="input"
-                    // value={this.data.city}
+                  // value={this.data.city}
                   />
                 </div>
                 {this.state.error.city && <small className="help is-danger">
@@ -54,20 +50,23 @@ class Home extends React.Component {
                     placeholder="Country"
                     name="country"
                     className="input"
-                    // value={this.data.country}
+                  // value={this.data.country}
                   />
                 </div>
                 {this.state.error.country && <small className="help is-danger">
                   {this.state.error.country}
                 </small>}
               </div>
-              <Link className="button is-danger is-hovered" id="enterButton" to={`/weather/${this.state.data.city}/${this.state.data.country}`}> Enter </Link>
+              <Link className="button" id="buttons" to={`/weather/${this.state.data.city}/${this.state.data.country}`}> Enter </Link>
             </form>
           </div>
         </div>
       </div>
-    </section> 
+      <div className="social-icons">
+        <a href="https://github.com/marepstein" target="blank"><img src="./images/github-brands.svg" width="82" height="86" title="GitHub" alt="GitHub"></img></a>
+        <a href="https://github.com/UstinVaskin" target="blank"><img src="./images/github-brands.svg" width="82" height="86" title="GitHub" alt="GitHub"></img></a>
+      </div>
+    </section >
   }
-
 }
 export default Home

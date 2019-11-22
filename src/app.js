@@ -13,6 +13,7 @@ import Weather from './components/Weather'
 import SunAndMoon from './components/SunAndMoon'
 import Horoscope from './components/horoscope'
 
+
 // git project https://github.com/erikflowers/weather-icons
 
 
@@ -27,6 +28,23 @@ const App = () => (
   </BrowserRouter>
 )
 
+render() {
+  const {
+    prevChild,
+    curChild,
+    childPosition,
+    animationCallback,
+  } = this.state
+  
+  return (
+    <Slider
+      position={childPosition}
+      animationCallback={animationCallback}
+    >
+      {prevChild || curChild}
+    </Slider>
+  )
+}
 
 ReactDOM.render(
   <App />,
