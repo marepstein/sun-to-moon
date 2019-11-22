@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import moment from 'moment' 
 import { Link } from 'react-router-dom'
-import Navbar from './navbar'
+import { Animated } from 'react-animated-css'
 
 
 const newDate = moment().format('DDmmYYYY')
@@ -50,25 +50,27 @@ class SunAndMoon extends React.Component {
     console.log(newDate)
     console.log(this.state.data)
     console.log(this.state.moonData)
-    return <div className="Section" id="moonPage">
-      <div className="container columns" id="moonContainer">
-        <div className="title">
-          <div className="title is-size-1-mobile" id="home-title">SUN & MOON</div>
-          <p>Sunrise: {this.state.data.sunrise}</p>
-          <p>Sunset: {this.state.data.sunset}</p>
-          <p>Day Length: {this.state.data.day_length}</p>
-          <p>Moonrise: {this.state.data.moonrise}</p>
-          <p>Moonset: {this.state.data.moonset}</p>
-          <p>Moon Phase: {this.state.moonData.map(moon => moon.Phase)}</p>
-          <p>Moon Type: {this.state.moonData.map(moon => moon.Moon)}</p>
+    return <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
+      <div className="Section" id="moonPage">
+        <div className="container columns" id="moonContainer">
+          <div className="title">
+            <div className="title is-size-1-mobile" id="home-title">SUN & MOON</div>
+            <p>Sunrise: {this.state.data.sunrise}</p>
+            <p>Sunset: {this.state.data.sunset}</p>
+            <p>Day Length: {this.state.data.day_length}</p>
+            <p>Moonrise: {this.state.data.moonrise}</p>
+            <p>Moonset: {this.state.data.moonset}</p>
+            <p>Moon Phase: {this.state.moonData.map(moon => moon.Phase)}</p>
+            <p>Moon Type: {this.state.moonData.map(moon => moon.Moon)}</p>
+          </div>
+          <div className="moonAndSun row is-pulled-right">
+            <div className="moon"></div>
+            <div className="sun"></div>
+          </div>
         </div>
-        <div className="moonAndSun row is-pulled-right">
-          <div className="moon"></div>
-          <div className="sun"></div>
-        </div>
+        <Link className="button" id="horoscopeButton" to={'/horoscope'}> Horoscope </Link>
       </div>
-      <Link className="button" id="horoscopeButton" to={'/horoscope'}> Horoscope </Link>
-    </div>
+    </Animated>
   }
 	
 }

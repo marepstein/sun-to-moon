@@ -1,8 +1,8 @@
 
 import React from 'react'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
-// import { CSSTransitionGroup } from 'react-transition-group'
+import { Animated } from 'react-animated-css'
+
 class Home extends React.Component {
   constructor() {
     super()
@@ -21,52 +21,54 @@ class Home extends React.Component {
   }
   render() {
     // console.log(location)
-    return <section className="hero is-fullheight">
-      <div className="hero-body">
-        <div className="section">
-          <div className="container">
-            <div className="title is-size-1-mobile" id="home-title" >Enter Location</div>
-            <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
-              <div className="field">
-                <div className="control">
-                  <input
-                    onChange={(e) => this.handleChange(e)}
-                    type="text"
-                    placeholder="City"
-                    name="city"
-                    className="input"
-                  // value={this.data.city}
-                  />
+    return <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
+      <section className="hero is-fullheight">
+        <div className="hero-body">
+          <div className="section">
+            <div className="container">
+              <div className="title is-size-1-mobile" id="home-title">Enter Location</div>
+              <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
+                <div className="field">
+                  <div className="control">
+                    <input
+                      onChange={(e) => this.handleChange(e)}
+                      type="text"
+                      placeholder="City"
+                      name="city"
+                      className="input"
+                      // value={this.data.city}
+                    />
+                  </div>
+                  {this.state.error.city && <small className="help is-danger">
+                    {this.state.error.city}
+                  </small>}
                 </div>
-                {this.state.error.city && <small className="help is-danger">
-                  {this.state.error.city}
-                </small>}
-              </div>
-              <div className="field">
-                <div className="control">
-                  <input
-                    onChange={(e) => this.handleChange(e)}
-                    type="text"
-                    placeholder="Country"
-                    name="country"
-                    className="input"
-                  // value={this.data.country}
-                  />
+                <div className="field">
+                  <div className="control">
+                    <input
+                      onChange={(e) => this.handleChange(e)}
+                      type="text"
+                      placeholder="Country"
+                      name="country"
+                      className="input"
+                      // value={this.data.country}
+                    />
+                  </div>
+                  {this.state.error.country && <small className="help is-danger">
+                    {this.state.error.country}
+                  </small>}
                 </div>
-                {this.state.error.country && <small className="help is-danger">
-                  {this.state.error.country}
-                </small>}
-              </div>
-              <Link className="button" id="buttons" to={`/weather/${this.state.data.city}/${this.state.data.country}`}> Enter </Link>
-            </form>
+                <Link className="button" id="buttons" to={`/weather/${this.state.data.city}/${this.state.data.country}`}> Enter </Link>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="social-icons">
-        <a href="https://github.com/marepstein" target="blank"><img src="./images/github-brands.svg" width="82" height="86" title="GitHub" alt="GitHub"></img></a>
-        <a href="https://github.com/UstinVaskin" target="blank"><img src="./images/github-brands.svg" width="82" height="86" title="GitHub" alt="GitHub"></img></a>
-      </div>
-    </section >
+        <div className="social-icons">
+          <a href="https://github.com/marepstein" target="blank"><img src="./images/github-brands.svg" width="82" height="86" title="GitHub" alt="GitHub"></img></a>
+          <a href="https://github.com/UstinVaskin" target="blank"><img src="./images/github-brands.svg" width="82" height="86" title="GitHub" alt="GitHub"></img></a>
+        </div>
+      </section>
+    </Animated>
   }
 }
 export default Home

@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { Animated } from 'react-animated-css'
 // import WeatherForm from './components/WeatherForm'
 
 
@@ -37,24 +38,26 @@ class Weather extends React.Component {
 	
   render() {
     console.log(this.state.data)
-    return <div className="section">
-      <div className="container">
-        <div className="columns is-mobile is-multiline">
-          <div className="title is-size-1-mobile" id="home-title">{this.state.data.name}
-            <div className="subtitle">{this.state.data.sys.country}</div>
-            <div className="container is-size-2 is-size-3-mobile">
-              <p>Temperature: {Math.floor(this.state.data.main.temp - 273.15)}</p>
-              <p>Max Temperature: {Math.floor(this.state.data.main.temp_max - 273.15)}</p>
-              <p>Min Temperature: {Math.floor(this.state.data.main.temp_min - 273.15)}</p>
-              <p>{this.state.data.weather[0].description}</p>
-              {/* <p>{this.state.data.coord.lat}</p>
+    return <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
+      <div className="section">
+        <div className="container">
+          <div className="columns is-mobile is-multiline">
+            <div className="title is-size-1-mobile" id="home-title">{this.state.data.name}
+              <div className="subtitle">{this.state.data.sys.country}</div>
+              <div className="container is-size-2 is-size-3-mobile">
+                <p>Temperature: {Math.floor(this.state.data.main.temp - 273.15)}</p>
+                <p>Max Temperature: {Math.floor(this.state.data.main.temp_max - 273.15)}</p>
+                <p>Min Temperature: {Math.floor(this.state.data.main.temp_min - 273.15)}</p>
+                <p>{this.state.data.weather[0].description}</p>
+                {/* <p>{this.state.data.coord.lat}</p>
               <p>{this.state.data.coord.lon}</p> */}
+              </div>
+              <Link className="button" id="sunMoonButton" to={`/sunandmoon/${this.state.data.coord.lat}/${this.state.data.coord.lon}`}> Sun and Moon </Link>
             </div>
-            <Link className="button" id="sunMoonButton" to={`/sunandmoon/${this.state.data.coord.lat}/${this.state.data.coord.lon}`}> Sun and Moon </Link>
           </div>
         </div>
       </div>
-    </div>
+    </Animated>
   }
 
 }
