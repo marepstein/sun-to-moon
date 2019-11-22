@@ -212,7 +212,7 @@ class Horoscope extends React.Component {
         <div className="">
           <div className="card" id="homeCard">
             <div className="media-content">
-              <Link className="card-header-title is-size- is-size-2-mobile" to={'/'}>Home</Link>
+              <Link className="card-header-title is-size- is-size-2-mobile" to={'/home'}>Home</Link>
             </div>
           </div>
         </div>

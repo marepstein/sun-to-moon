@@ -63,10 +63,6 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
-        <div className="social-icons">
-          <a href="https://github.com/marepstein" target="blank"><img src="./images/github-brands.svg" width="82" height="86" title="GitHub" alt="GitHub"></img></a>
-          <a href="https://github.com/UstinVaskin" target="blank"><img src="./images/github-brands.svg" width="82" height="86" title="GitHub" alt="GitHub"></img></a>
-        </div>
       </section>
     </Animated>
   }

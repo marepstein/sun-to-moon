@@ -8,6 +8,9 @@
 	// transform:skew(60deg, -30deg) scaleY(.6);
 }
 
+#landing {
+	text-decoration: none;
+}
 
 a {
 	color: white; 
@@ -84,7 +87,7 @@ html, body {
 	font-weight: 800;
 }
 
-p {
+h5 {
 	color: white;
 }
 
@@ -162,27 +165,25 @@ size: 500px;
 ** Change this if you need to modify
 ** the amount of lines displayed
 */
-$total-lines: 6;
+$total-lines: 4;
 
 
 /*
 ** Leave these unless you want
 ** to open a whole can of worms
 */
-$left-offset: 10px;
-$clip-height: 50px;
-$line-height: $clip-height - 20px;
+$left-offset: 59px;
+$clip-height: 80px;
+$line-height: $clip-height - 5px;
 
 
 /*
 ** Apply styles to the parent element
 */
 .Words {
-  margin: 0 auto;
-	padding: 80px 0;
-	position: absolute;
+	margin-bottom: 0 auto;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 30px;
+  font-size: 140px;
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: uppercase;
@@ -231,7 +232,6 @@ p {
   vertical-align: top;
   white-space: nowrap;
 }
-
 
 /*
 ** The hover interaction

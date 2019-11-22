@@ -13,7 +13,7 @@ import Home from './components/Home'
 import Weather from './components/Weather'
 import SunAndMoon from './components/SunAndMoon'
 import Horoscope from './components/horoscope'
-
+import Landing from './components/Landing'
 
 // git project https://github.com/erikflowers/weather-icons
 
@@ -21,7 +21,8 @@ import Horoscope from './components/horoscope'
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={Home} /> 
+      <Route exact path="/" component={Landing} /> 
+      <Route exact path="/home" component={Home} /> 
       <Route path="/weather/:city/:country" component={Weather} />
       <Route path="/sunandmoon/:lat/:lon" component={SunAndMoon} />
       <Route path="/horoscope/" component={Horoscope} /> 

@@ -57,13 +57,13 @@ class SunAndMoon extends React.Component {
             <div className="title is-size-1-mobile" id="home-title">SUN & MOON</div>
             <div className="column2">
               <div className="columnIS">
-                <p>Sunrise: {this.state.data.sunrise}</p>
-                <p>Sunset: {this.state.data.sunset}</p>
-                <p>Day Length: {this.state.data.day_length}</p>
-                <p>Moonrise: {this.state.data.moonrise}</p>
-                <p>Moonset: {this.state.data.moonset}</p>
-                <p>Moon Phase: {this.state.moonData.map(moon => moon.Phase)}</p>
-                <p>Moon Type: {this.state.moonData.map(moon => moon.Moon)}</p>
+                <h5>Sunrise: {this.state.data.sunrise}</h5>
+                <h5>Sunset: {this.state.data.sunset}</h5>
+                <h5>Day Length: {this.state.data.day_length}</h5>
+                <h5>Moonrise: {this.state.data.moonrise}</h5>
+                <h5>Moonset: {this.state.data.moonset}</h5>
+                <h5>Moon Phase: {this.state.moonData.map(moon => moon.Phase)}</h5>
+                <h5>Moon Type: {this.state.moonData.map(moon => moon.Moon)}</h5>
               </div>
               <div className="columnIS">
                 <div className="moonAndSun is-three-quarters-mobile">
