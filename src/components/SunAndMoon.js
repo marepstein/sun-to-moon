@@ -51,6 +51,7 @@ class SunAndMoon extends React.Component {
     return <div className="Section" id="moonPage">
       <div className="container" id="moonContainer">
         <div className="title">
+				<div className="title is-size-1-mobile" id="home-title">SUN & MOON</div>
           <p>Sunrise: {this.state.data.sunrise}</p>
           <p>Sunset: {this.state.data.sunset}</p>
           <p>Day Length: {this.state.data.day_length}</p>
