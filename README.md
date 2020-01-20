@@ -1,9 +1,9 @@
 ![Image anchors 'MOON AND SUN'](https://i.imgur.com/oL0F346.png)
 
 ### Overview:
- It was a paired project using Rect router and API to build an app. Marissa and I are decided on taking astro-theme. A Web App that accurately shows the state and phase of the Sun and Moon in any place with daily-updated horoscope. 
+This was a paired project using Rect router and API to build an app. Ustin and I decided to create an astrology/astronomy themed app. A Web App that accurately shows the state and phase of the Sun and Moon in any place with a daily-updated horoscope. 
  
- We used few APIs that transfer data from one to another and few pages for a good UX. 
+ We used an number of APIs to populate data, illustrated on a few pages linked together for a good UX. 
 
 ### Brief:
 ![Image anchors 'Suns and Moons'](https://i.imgur.com/0jQrBqp.png)
@@ -29,7 +29,9 @@
 
 ##### Approach Taken:
 ![Image anchors 'Suns and Moons'](https://i.imgur.com/0jQrBqp.png)
-We had to think of UX, user-interaction and data flow.  Crete home page and implement react router.
+We had to think of UX, user-interaction and data flow.  
+
+1. Created home page and implement react router.
 
 
 ```
@@ -115,7 +117,7 @@ componentDidMount() {
 ```
 
 ## Render issue 
-I had to transform string in order to receive needed information from API.
+Transforming the data to a string in order to receive only necessary information from our API.
 
 ```
  <div className="content">
@@ -159,13 +161,3 @@ We had to pass on data from one page to another.
 * Add Astro - Maps;
 * Add Compass;
 * Mobile version (Responsive).
-
-
-
-
-
-
-
-
-
-
