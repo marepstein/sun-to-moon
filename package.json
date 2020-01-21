@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "webpack-dev-server --mode=development",
     "build": "webpack -p",
-    "deploy": "yarn build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "homepage": "https://marepstein.github.io/sun-to-moon/",
   "author": "Marissa Epstein & Ustin Vaskin",
@@ -38,6 +38,7 @@
     "react-moment": "^0.9.6",
     "react-pose": "^4.0.10",
     "react-router-dom": "^5.1.2",
-    "react-transition-group": "^1.2.1"
+    "react-transition-group": "^1.2.1",
+    "rollup": "^1.29.1"
   }
 }
