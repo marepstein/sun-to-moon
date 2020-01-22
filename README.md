@@ -161,12 +161,11 @@ We had to pass on data from one component to another. Being our first React proj
     console.log(country)
 ```
 
-``` axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=429736441cf3572838aa10530929f7cd`)```
-```
+``` axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=429736441cf3572838aa10530929f7cd`)
       .then(resp => this.setState({ data: resp.data }))
       .catch(err => this.setState({ errors: err.response.data.errors }))
   }
-  ```
+```
   
 ### Design: 
 
