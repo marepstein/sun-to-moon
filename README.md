@@ -39,8 +39,7 @@ This was a paired project using Rect router, JavaScript and a public API to buil
 * React.
 * Bulma. 
 
-##### Approach Taken:
-![Image anchors 'Suns and Moons'](https://i.imgur.com/0jQrBqp.png)
+#### Approach Taken:
 
 ### Planning:
 
