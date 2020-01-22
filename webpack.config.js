@@ -20,7 +20,7 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: 'src',
+    contentBase: path.resolve('src'),
     hot: true,
     open: true,
     port: 8000,
