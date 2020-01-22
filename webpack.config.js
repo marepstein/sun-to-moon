@@ -7,7 +7,7 @@ module.exports = {
   // context: path.resolve(__dirname, 'frontend'),
   output: {
     filename: 'bundle.js',
-    path: path.resolve('dist')
+    path: path.resolve('')
   },
   devtool: 'source-maps',
   module: {
