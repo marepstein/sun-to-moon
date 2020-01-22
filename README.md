@@ -1,19 +1,31 @@
 ![Image anchors 'MOON AND SUN'](https://i.imgur.com/oL0F346.png)
 
+
+### Installation:
+
+Clone or download the repo
+Run npm i in the CLI
+Run npm run serve in the CLI
+
 ### Overview:
-This was a paired project using Rect router and API to build an app. Ustin and I decided to create an astrology/astronomy themed app. A Web App that accurately shows the state and phase of the Sun and Moon in any place with a daily-updated horoscope. 
+This was a paired project using Rect router, JavaScript and a public API to build an astro themed app. Moon and Sun is a Web App that accurately shows the state and phase of the Sun and Moon in any place with a daily-updated horoscope. 
  
  We used an number of APIs to populate data, illustrated on a few pages linked together for a good UX. 
+ 
+ ### Collaborator:
+ 
+ Ustin Vaskin
 
 ### Brief:
 ![Image anchors 'Suns and Moons'](https://i.imgur.com/0jQrBqp.png)
 
 * Render a React App in the browser;
-* API uses;
+* Public API uses;
 * Include separate HTML / scss / Components files;
 * Use React for DOM manipulation;
 * Deploy App online, using Github Pages, where the rest of the world can access it;
 * Use semantic markup for HTML and CSS (adhere to best practices).
+* A timeframe of 48 hours 
 
 
 ### Technologies Used:
@@ -29,10 +41,16 @@ This was a paired project using Rect router and API to build an app. Ustin and I
 
 ##### Approach Taken:
 ![Image anchors 'Suns and Moons'](https://i.imgur.com/0jQrBqp.png)
-We had to think of UX, user-interaction and data flow.  
+
+### Planning:
+
+We quickly came up with the idea of an Astro themed app, so we were able to take some time to think of the UX, user-interaction and data flow. We researched potential API's and were careful to choose API's with enough data to work with. Once we had decided on this we were able to plan our design, which was a necessary step in order to distinguish the necessary Routes. 
+
+We decided on sticking to a minimalist theme, whilst also ensuring the presentation of the API's data in an interesting way for users. Following this, we were able to begin the build.
+
+### Build: 
 
 1. Created home page and implement react router.
-
 
 ```
 import React from 'react'
@@ -117,7 +135,7 @@ componentDidMount() {
 ```
 
 ## Render issue 
-Transforming the data to a string in order to receive only necessary information from our API.
+Transforming the data to a string in order to manipulate data so that only the necessary information from our API rendered.
 
 ```
  <div className="content">
@@ -128,7 +146,7 @@ Transforming the data to a string in order to receive only necessary information
 ```
 
 ## Moving data 
-We had to pass on data from one page to another. 
+We had to pass on data from one component to another. Being our first React project, this initially proved challenging. However, once we were able to m ake links between child and parent components, and a pattern emerged, it became easier. 
 `
 <Link className="button" id="sunMoonButton" to={`/weather/${this.state.data.city}/${this.state.data.country}`}> Enter </Link>
 `
@@ -150,10 +168,56 @@ We had to pass on data from one page to another.
   }
   ```
   
+### Design: 
+
+In order to achieve smooth page transitions, we used react-animated-css, which was a simple yet effective method. Each component was wrapped in an '<Animated>' tag which had properties defined. 
+	
+```  return <Animated animationIn="fadeInLeft" animationOut="fadeOut" isVisible={true}>
+      <div className="Section" id="moonPage">
+        <div className="container columns" id="moonContainer">
+          <div className="title">
+            <div className="title is-size-1-mobile" id="home-title">SUN & MOON</div>
+            <div className="column2">
+              <div className="columnIS">
+                <h5>Sunrise: {this.state.data.sunrise}</h5>
+                <h5>Sunset: {this.state.data.sunset}</h5>
+                <h5>Day Length: {this.state.data.day_length}</h5>
+                <h5>Moonrise: {this.state.data.moonrise}</h5>
+                <h5>Moonset: {this.state.data.moonset}</h5>
+                <h5>Moon Phase: {this.state.moonData.map(moon => moon.Phase)}</h5>
+                <h5>Moon Type: {this.state.moonData.map(moon => moon.Moon)}</h5>
+              </div>
+              <div className="columnIS">
+                <div className="moonAndSun is-three-quarters-mobile">
+                  <div className="moon"></div>
+                  <div className="sun"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <Link className="button" id="sunMoonButton" to={'/horoscope'}> Horoscope </Link>
+      </div>
+    </Animated>
+  }
+  ```
+  
 
 ### Final Product:
 
 ![Image of desktop 'MOON AND SUN'](https://i.imgur.com/H1MBT5W.gif)
+
+### Reflection
+
+Wins
+Gaining a better understanding of how an API is used, and using Axios to consume it and make it useful.
+Developing on my knowledge of the React fundamentals.
+Developing my teamworking skills by working with and reading another developers code.
+
+Challenges
+Manipulating data from the API's into something consumed more easily.
+Comprehending the use of state in React.
 
 ### Future Enhancement
  There are several potential future features that can be implemented, such as:
