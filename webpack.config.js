@@ -7,7 +7,8 @@ module.exports = {
   // context: path.resolve(__dirname, 'frontend'),
   output: {
     filename: 'bundle.js',
-    path: path.resolve('dist')
+		path: path.resolve('dist'),
+		publicPath: '/sun-to-moon/'
   },
   devtool: 'source-maps',
   module: {

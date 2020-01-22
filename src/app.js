@@ -19,7 +19,7 @@ import Landing from './components/Landing'
 
 
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/sun-to-moon">
     <Switch>
       <Route exact path="/" component={Landing} /> 
       <Route exact path="/home" component={Home} /> 
