@@ -146,13 +146,14 @@ Transforming the data to a string in order to manipulate data so that only the n
 
 ## Moving data 
 We had to pass on data from one component to another. Being our first React project, this initially proved challenging. However, once we were able to m ake links between child and parent components, and a pattern emerged, it became easier. 
-`
-<Link className="button" id="sunMoonButton" to={`/weather/${this.state.data.city}/${this.state.data.country}`}> Enter </Link>
-`
 
-`
+```
+<Link className="button" id="sunMoonButton" to={`/weather/${this.state.data.city}/${this.state.data.country}`}> Enter </Link>
+```
+
+```
 <Route path="/weather/:city/:country" component={Weather} />
-`
+```
 
 ```componentDidMount() {
     const { city, country } = this.props.match.params
