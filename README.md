@@ -210,12 +210,13 @@ In order to achieve smooth page transitions, we used react-animated-css, which w
 
 ### Reflection
 
-Wins
+### Wins
+
 Gaining a better understanding of how an API is used, and using Axios to consume it and make it useful.
 Developing on my knowledge of the React fundamentals.
 Developing my teamworking skills by working with and reading another developers code.
 
-Challenges
+### Challenges
 Manipulating data from the API's into something consumed more easily.
 Comprehending the use of state in React.
 
