@@ -12,6 +12,10 @@ This was a paired project using Rect router, JavaScript and a public API to buil
  
  We used an number of APIs to populate data, illustrated on a few pages linked together for a good UX. 
  
+ ![Image of desktop 'MOON AND SUN'](https://i.imgur.com/H1MBT5W.gif)
+ 
+https://marepstein.github.io/sun-to-moon/
+ 
  ### Collaborator:
  
  Ustin Vaskin
@@ -203,11 +207,7 @@ In order to achieve smooth page transitions, we used react-animated-css, which w
     </Animated>
   }
   ```
-  
-
-### Final Product:
-
-![Image of desktop 'MOON AND SUN'](https://i.imgur.com/H1MBT5W.gif)
+ 
 
 ### Reflection
 
